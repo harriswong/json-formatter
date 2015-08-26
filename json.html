@@ -29,7 +29,8 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#jsonSubmit').bind('click', function() {
-				var formattedJSONString = JSONFormat($('#input').val());
+				var input = $('#input').val();
+				var formattedJSONString = JSONFormat(input.replace(/[\s\n]+/g, ''));
 				$('#output').html(formattedJSONString);
 			});
 		});		
